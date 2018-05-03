@@ -7,14 +7,13 @@
 #include <SmartDashboard/SendableChooser.h>
 #include <SmartDashboard/SmartDashboard.h>
 
-class DiffDrive : public DifferentialDrive {
+class DiffDrive {
 public:
 	DiffDrive(int leftMotor, int rightMotor);
 	void Init(void);
 	void Update(float leftSpeed, float rightSpeed);
 	int getDriveType(void);
-	void setDriveType(int driveType);
-protected:
+	void setDriveType(int type);
 	~DiffDrive(void);
 private:
 	WPI_TalonSRX a_leftTalon;

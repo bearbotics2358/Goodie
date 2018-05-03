@@ -5,8 +5,7 @@
 #include <SmartDashboard/SendableChooser.h>
 #include <SmartDashboard/SmartDashboard.h>
 
-DiffDrive::DiffDrive(int leftMotor, int rightMotor)
-:
+DiffDrive::DiffDrive(int leftMotor, int rightMotor):
 a_leftTalon(leftMotor),
 a_rightTalon(rightMotor),
 
@@ -22,5 +21,29 @@ void DiffDrive::Init(void)
 
 void DiffDrive::Update(float leftSpeed, float rightSpeed)
 {
-	a_DifferentialDrive.TankDrive(leftSpeed, rightSpeed, false);
+	switch(driveType) {
+		case 0: //Tank Drive with two flightsticks in ports 1 and 2
+			a_DifferentialDrive.TankDrive(leftSpeed, rightSpeed, false);
+			break;
+		case 1: //Arcade Drive with the flightstick in port 2
+			a_DifferentialDrive.ArcadeDrive(leftSpeed, rightSpeed, false);
+			break;
+
+	}
+
+}
+
+int DiffDrive::getDriveType(void)
+{
+	return driveType;
+}
+
+void DiffDrive::setDriveType(int type)
+{
+	driveType = type;
+}
+
+DiffDrive::~DiffDrive(void)
+{
+
 }
