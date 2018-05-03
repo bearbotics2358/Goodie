@@ -5,9 +5,9 @@
 #include "ctre/Phoenix.h"
 #include <IterativeRobot.h>
 
-class Robot : public IterativeRobot {
+class Woodie : public IterativeRobot {
 public:
-	Robot(void);
+	Woodie(void);
 	void RobotInit(void);
 	void RobotPeriodic(void);
 
@@ -19,9 +19,7 @@ public:
 
 	void AutonomousInit(void);
 	void AutonomousPeriodic(void);
-
-protected:
-	~Robot(void);
+	~Woodie(void);
 
 private:
 	Joystick a_Joystick1; // Flightstick in Slot 1

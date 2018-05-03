@@ -1,11 +1,11 @@
-#include <Robot.h>
 #include <WPILib.h>
 #include "ctre/Phoenix.h"
 #include <Definitions.h>
 #include <SmartDashboard/SendableChooser.h>
 #include <SmartDashboard/SmartDashboard.h>
+#include <Woodie.h>
 
-Robot::Robot(void):
+Woodie::Woodie(void):
 a_Joystick1(JOYSTICK1_PORT),
 a_Joystick2(JOYSTICK2_PORT),
 
@@ -18,48 +18,50 @@ a_DriveTrain(a_leftTalon, a_rightTalon)
 	SmartDashboard::init();
 }
 
-void Robot::RobotInit(void)
+void Woodie::RobotInit(void)
 {
 
 }
 
-void Robot::RobotPeriodic(void)
+void Woodie::RobotPeriodic(void)
 {
 
 }
 
-void Robot::DisabledInit(void)
+void Woodie::DisabledInit(void)
 {
 	a_DriveTrain.TankDrive(0, 0, false); //Should stop when disabled.
 }
 
-void Robot::DisabledPeriodic(void)
+void Woodie::DisabledPeriodic(void)
 {
 	SmartDashboard::PutBoolean("Enabled", false);
 }
 
-void Robot::TeleopInit(void)
+void Woodie::TeleopInit(void)
 {
 
 }
 
-void Robot::TeleopPeriodic(void)
+void Woodie::TeleopPeriodic(void)
 {
 	SmartDashboard::PutBoolean("Enabled", true);
 	a_DriveTrain.TankDrive(a_Joystick1.GetRawAxis(1), a_Joystick2.GetRawAxis(1), false);
 }
 
-void Robot::AutonomousInit(void)
+void Woodie::AutonomousInit(void)
 {
 	a_DriveTrain.TankDrive(0, 0, false); //Robot will do nothing
 }
 
-void Robot::AutonomousPeriodic(void)
+void Woodie::AutonomousPeriodic(void)
 {
 
 }
 
-Robot::~Robot(void)
+Woodie::~Woodie(void)
 {
 
 }
+
+START_ROBOT_CLASS(Woodie); // Call to Task Main();

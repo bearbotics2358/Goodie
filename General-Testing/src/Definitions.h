@@ -9,6 +9,6 @@
 
 #endif
 /*
- * IF ANY OF THIS DANG CODE WORKS
- * I WON'T BELIEVE IT FOR A SECOND
+ * These values are purely hypothetical based off of Woodie's github repo
+ * For all I know, none of these will work in the slightest.
  */
