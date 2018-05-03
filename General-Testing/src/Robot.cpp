@@ -46,7 +46,7 @@ void Robot::TeleopInit(void)
 void Robot::TeleopPeriodic(void)
 {
 	SmartDashboard::PutBoolean("Enabled", true);
-	a_DriveTrain.TankDrive(a_Joystick1.GetRawAxis(1), a_Joystick2.GetRawAxis(2), false);
+	a_DriveTrain.TankDrive(a_Joystick1.GetRawAxis(1), a_Joystick2.GetRawAxis(1), false);
 }
 
 void Robot::AutonomousInit(void)
