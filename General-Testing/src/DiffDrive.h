@@ -4,8 +4,6 @@
 #include <WPILib.h>
 #include "ctre/Phoenix.h"
 #include <Definitions.h>
-#include <SmartDashboard/SendableChooser.h>
-#include <SmartDashboard/SmartDashboard.h>
 
 class DiffDrive {
 public:
