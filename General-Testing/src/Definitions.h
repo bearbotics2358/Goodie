@@ -3,6 +3,7 @@
 
 #define JOYSTICK1_PORT 1
 #define JOYSTICK2_PORT 2
+#define GAMECUBE_PORT 3
 
 #define LEFT_TALON 0
 #define RIGHT_TALON 1

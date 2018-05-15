@@ -25,6 +25,7 @@ public:
 private:
 	Joystick a_Joystick1; // Flightstick in Slot 1
 	Joystick a_Joystick2; // Flightstick in Slot 2
+	Joystick a_GameCubeController; // Gamecube controller in Slot 3
 
 	DiffDrive a_DiffDrive; // (Left Motor, Right Motor)
 };

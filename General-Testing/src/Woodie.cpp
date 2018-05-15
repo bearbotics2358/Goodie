@@ -9,6 +9,7 @@
 Woodie::Woodie(void):
 a_Joystick1(JOYSTICK1_PORT),
 a_Joystick2(JOYSTICK2_PORT),
+a_GameCubeController(GAMECUBE_PORT),
 
 a_DiffDrive(LEFT_TALON, RIGHT_TALON)
 
@@ -65,6 +66,12 @@ void Woodie::TeleopPeriodic(void)
 	{
 		SmartDashboard::PutString("Drive Mode:", "Arcade Drive");
 		a_DiffDrive.Update(a_Joystick2.GetRawAxis(1), a_Joystick2.GetRawAxis(0));
+	}
+
+	if(a_DiffDrive.getDriveType() == 2)
+	{
+		SmartDashboard::PutString("Drive Mode: ", "Gamecube");
+		a_DiffDrive.Update(a_GameCubeController.GetRawAxis(1), a_GameCubeController.GetRawAxis(3)); // Theo the two joysticks on the gamecube controller
 	}
 }
 
