@@ -18,7 +18,7 @@ private:
 	WPI_TalonSRX a_rightTalon;
 
 
-	DifferentialDrive a_DifferentialDrive; //Default Differential Drive First provides.
+	DifferentialDrive a_DifferentialDrive; // Default Differential Drive First provides.
 
 	int driveType;
 };

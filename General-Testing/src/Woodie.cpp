@@ -28,7 +28,7 @@ void Woodie::RobotPeriodic(void)
 
 void Woodie::DisabledInit(void)
 {
-	a_DiffDrive.Update(0, 0); //Should stop when disabled.
+	a_DiffDrive.Update(0, 0); // Should stop when disabled.
 }
 
 void Woodie::DisabledPeriodic(void)
@@ -52,7 +52,7 @@ void Woodie::TeleopPeriodic(void)
 
 	if(a_Joystick2.GetRawButton(2))
 	{
-		a_DiffDrive.setDriveType(1); //Arcade Drive
+		a_DiffDrive.setDriveType(1); // Arcade Drive
 	}
 
 	if(a_DiffDrive.getDriveType() == 0)
