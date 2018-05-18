@@ -56,6 +56,11 @@ void Woodie::TeleopPeriodic(void)
 		a_DiffDrive.setDriveType(1); // Arcade Drive
 	}
 
+	if(a_GameCubeController.GetRawButton(2))
+	{
+		a_DiffDrive.setDriveType(2); // Tank Drive w/ Gamecube Controller
+	}
+
 	if(a_DiffDrive.getDriveType() == 0)
 	{
 		SmartDashboard::PutString("Drive Mode:", "Tank Drive");
