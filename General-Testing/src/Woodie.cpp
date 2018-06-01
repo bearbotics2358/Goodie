@@ -75,7 +75,7 @@ void Woodie::TeleopPeriodic(void)
 
 	if(a_DiffDrive.getDriveType() == 2)
 	{
-		SmartDashboard::PutString("Drive Mode: ", "Gamecube");
+		SmartDashboard::PutString("Drive Mode:", "Gamecube");
 		a_DiffDrive.Update(a_GameCubeController.GetRawAxis(1), a_GameCubeController.GetRawAxis(3)); // Theo the two joysticks on the gamecube controller
 	}
 }
