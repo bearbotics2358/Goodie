@@ -64,7 +64,7 @@ void Woodie::TeleopPeriodic(void)
 	if(a_DiffDrive.getDriveType() == 0)
 	{
 		SmartDashboard::PutString("Drive Mode:", "Tank Drive");
-		a_DiffDrive.Update(a_Joystick1.GetRawAxis(1), a_Joystick2.GetRawAxis(1));
+		a_DiffDrive.Update(a_Joystick2.GetRawAxis(1), a_Joystick1.GetRawAxis(1));
 	}
 
 	if(a_DiffDrive.getDriveType() == 1)
@@ -76,7 +76,7 @@ void Woodie::TeleopPeriodic(void)
 	if(a_DiffDrive.getDriveType() == 2)
 	{
 		SmartDashboard::PutString("Drive Mode:", "Gamecube");
-		a_DiffDrive.Update(a_GameCubeController.GetRawAxis(1), a_GameCubeController.GetRawAxis(3)); // Theo the two joysticks on the gamecube controller
+		a_DiffDrive.Update(a_GameCubeController.GetRawAxis(2), a_GameCubeController.GetRawAxis(1)); // Theo the two joysticks on the gamecube controller
 	}
 }
 

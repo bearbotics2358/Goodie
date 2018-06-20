@@ -29,7 +29,7 @@ void DiffDrive::Update(float leftSpeed, float rightSpeed)
 			a_DifferentialDrive.ArcadeDrive(leftSpeed, rightSpeed, false);
 			break;
 		case 2: // Theo Tank Drive with Gamecube controller in port 3
-			a_DifferentialDrive.ArcadeDrive(leftSpeed, rightSpeed, false);
+			a_DifferentialDrive.TankDrive(leftSpeed, rightSpeed, false);
 			break;
 		default: // Robot stops if something is completely messed up??!?!?
 			a_DifferentialDrive.TankDrive(0, 0, false);
