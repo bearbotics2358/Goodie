@@ -7,6 +7,8 @@
 
 #define LEFT_TALON 0
 #define RIGHT_TALON 1
+#define LIFT_TALON 2
+
 
 #endif
 /*

@@ -6,7 +6,10 @@
 #include <Woodie.h>
 #include <DiffDrive.h>
 
+
 Woodie::Woodie(void):
+a_leftEncoder(8, 9, true),
+a_rightEncoder(6, 7, false),
 a_Joystick1(JOYSTICK1_PORT),
 a_Joystick2(JOYSTICK2_PORT),
 a_GameCubeController(GAMECUBE_PORT),
@@ -39,7 +42,8 @@ void Woodie::DisabledPeriodic(void)
 
 void Woodie::TeleopInit(void)
 {
-
+	a_leftEncoder.Reset();
+	a_rightEncoder.Reset();
 }
 
 void Woodie::TeleopPeriodic(void)
@@ -64,7 +68,7 @@ void Woodie::TeleopPeriodic(void)
 	if(a_DiffDrive.getDriveType() == 0)
 	{
 		SmartDashboard::PutString("Drive Mode:", "Tank Drive");
-		a_DiffDrive.Update(a_Joystick2.GetRawAxis(1), a_Joystick1.GetRawAxis(1));
+		a_DiffDrive.Update(a_Joystick1.GetRawAxis(1), a_Joystick2.GetRawAxis(1));
 	}
 
 	if(a_DiffDrive.getDriveType() == 1)
@@ -78,8 +82,13 @@ void Woodie::TeleopPeriodic(void)
 		SmartDashboard::PutString("Drive Mode:", "Gamecube");
 		a_DiffDrive.Update(a_GameCubeController.GetRawAxis(2), a_GameCubeController.GetRawAxis(1)); // Theo the two joysticks on the gamecube controller
 	}
-}
 
+	int leftEncoder = a_leftEncoder.GetRaw();
+	SmartDashboard::PutNumber("Left Encoder Value", leftEncoder);
+
+	int rightEncoder = a_rightEncoder.GetRaw();
+	SmartDashboard::PutNumber("Right Encoder Value", rightEncoder);
+}
 void Woodie::AutonomousInit(void)
 {
 

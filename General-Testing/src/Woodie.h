@@ -23,6 +23,8 @@ public:
 	~Woodie(void);
 
 private:
+	Encoder a_leftEncoder;
+	Encoder a_rightEncoder;
 	Joystick a_Joystick1; // Flightstick in Slot 1
 	Joystick a_Joystick2; // Flightstick in Slot 2
 	Joystick a_GameCubeController; // Gamecube controller in Slot 3

@@ -48,6 +48,7 @@ void DiffDrive::setDriveType(int type)
 	driveType = type;
 }
 
+
 DiffDrive::~DiffDrive(void)
 {
 
