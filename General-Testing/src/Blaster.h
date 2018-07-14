@@ -9,10 +9,12 @@ class Blaster {
 public:
 	Blaster(void);
 	void UpdateAngle(int angle);
-	void Shoot(void);
+	void ToggleFiring(void);
+	bool IsFiring(void);
 	~Blaster(void);
 private:
 	WPI_TalonSRX a_liftMotor;
+	DigitalOutput a_Relay;
 };
 
 #endif /* SRC_BLASTER_H_ */

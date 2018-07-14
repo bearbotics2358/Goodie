@@ -5,6 +5,7 @@
 #include <WPILib.h>
 #include "ctre/Phoenix.h"
 #include <IterativeRobot.h>
+#include <Blaster.h>
 
 class Woodie : public IterativeRobot {
 public:
@@ -30,6 +31,7 @@ private:
 	Joystick a_GameCubeController; // Gamecube controller in Slot 3
 
 	DiffDrive a_DiffDrive; // (Left Motor, Right Motor)
+	Blaster a_Blaster;
 };
 
 #endif
