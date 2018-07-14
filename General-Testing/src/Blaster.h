@@ -8,8 +8,10 @@
 class Blaster {
 public:
 	Blaster(void);
-	void UpdateAngle(int angle);
-	void ToggleFiring(void);
+	void UpdateAngle(int angle); // Unused until pot is added
+	void SetLiftSpeed(double speed);
+	void Fire(void);
+	void StopFiring(void);
 	bool IsFiring(void);
 	~Blaster(void);
 private:

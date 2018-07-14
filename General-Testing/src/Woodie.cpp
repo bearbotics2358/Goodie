@@ -60,22 +60,18 @@ void Woodie::TeleopPeriodic(void)
 		a_DiffDrive.setDriveType(1); // Arcade Drive
 	}
 
-	if(a_GameCubeController.GetRawButton(3))
+	if(a_GameCubeController.GetRawButton(3)) // B Button
 	{
-		if(a_Blaster.IsFiring() == false)
-		{
-			a_Blaster.ToggleFiring();
-		}
+		a_Blaster.Fire();
 	}
 	else
 	{
-		if(a_Blaster.IsFiring())
-		{
-			a_Blaster.ToggleFiring();
-		}
+		a_Blaster.StopFiring();
 	}
 
-	if(a_GameCubeController.GetRawButton(2))
+	a_Blaster.SetLiftSpeed(a_GameCubeController.GetRawAxis(2));
+
+	if(a_GameCubeController.GetRawButton(2)) // A Button
 	{
 		a_DiffDrive.setDriveType(2); // Tank Drive w/ Gamecube Controller
 	}
@@ -92,11 +88,11 @@ void Woodie::TeleopPeriodic(void)
 		a_DiffDrive.Update(a_Joystick2.GetRawAxis(1), a_Joystick2.GetRawAxis(0));
 	}
 
-	if(a_DiffDrive.getDriveType() == 2)
+	/* if(a_DiffDrive.getDriveType() == 2)
 	{
 		driveMode = 2;
 		a_DiffDrive.Update(a_GameCubeController.GetRawAxis(1), a_GameCubeController.GetRawAxis(2)); // Theo the two joysticks on the gamecube controller
-	}
+	}*/
 
 	SmartDashboard::PutBoolean("Enabled", true);
 	SmartDashboard::PutBoolean("Firing?", a_Blaster.IsFiring());

@@ -15,16 +15,19 @@ void Blaster::UpdateAngle(int angle)
 
 }
 
-void Blaster::ToggleFiring(void)
+void Blaster::SetLiftSpeed(double speed)
 {
-	if(a_Relay.Get())
-	{
-		a_Relay.Set(false);
-	}
-	else
-	{
-		a_Relay.Set(true);
-	}
+	a_liftMotor.Set(speed);
+}
+
+void Blaster::Fire(void)
+{
+	a_Relay.Set(true);
+}
+
+void Blaster::StopFiring(void)
+{
+	a_Relay.Set(false);
 }
 
 bool Blaster::IsFiring(void)
